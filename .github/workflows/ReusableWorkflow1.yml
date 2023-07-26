@@ -1,0 +1,25 @@
+name: reusableWorkflow
+
+on:
+  workflow_call:
+    inputs: 
+      EnableRunner1:
+        type: boolean
+      EnableRunner2:
+        type: boolean
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: runner1
+        
+        run: |
+          if [ ${{ inputs.EnableRunner1 }} ]; then
+            echo "The runner is enabled"
+          fi
+     
+    
+        
+        
